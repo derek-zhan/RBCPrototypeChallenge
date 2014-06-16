@@ -1,0 +1,51 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+   
+     
+    <RelativeLayout 
+       xmlns:tools="http://schemas.android.com/tools"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:id="@+id/menu_relative_layout"
+    >
+    	<Button 
+    		android:id="@+id/spending_habit_button" 
+    		android:layout_marginLeft="50dp"
+    		android:layout_marginTop="10dp"
+    		android:layout_width="wrap_content" 
+    		android:layout_height="wrap_content"
+    		android:layout_alignToParentLeft="true"
+    		android:drawableLeft="@drawable/icon_analyzing"
+    		android:background="@null"
+    		android:text="@string/analyzing_button_text"/>
+    	<Button 
+    		android:id="@+id/cashflow_button" 
+    		android:layout_marginLeft="50dp"
+    		android:layout_width="wrap_content" 
+    		android:layout_height="wrap_content"
+    		android:layout_below="@id/spending_habit_button"
+    		android:layout_alignToParentLeft="true"
+    		android:drawableLeft="@drawable/icon_cashflow"
+    		android:background="@null"
+    		android:text="@string/cashflow_button_text"/>
+    
+    </RelativeLayout>
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+ 
+    <ListView
+        android:id="@+id/left_drawer"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/navy"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp" />
+ 
+</android.support.v4.widget.DrawerLayout>

@@ -1,0 +1,101 @@
+package com.byteme.rbcprototype;
+
+import com.byteme.rbcprototype.SuggestionFragment.SuggestionListArrayAdapter;
+
+import android.app.Fragment;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.ListView;
+
+public class InterestFragment extends Fragment implements OnClickListener{
+	
+	
+	
+	public InterestFragment(){
+		
+		
+		
+	}
+	
+	@Override
+	 public void onActivityCreated(Bundle savedInstanceState) {  
+	        super.onActivityCreated(savedInstanceState);  
+	        
+	        String[] values = new String[] { "gro","tra","ent"};
+	        ListView listView = (ListView) getActivity().findViewById(R.id.interest_listview);  
+			 
+			InterestListArrayAdapter adapter=new InterestListArrayAdapter(getActivity(),values);
+			 
+			 listView.setAdapter(adapter);
+	        
+	 }
+	
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		
+		 
+		 View rootView = inflater.inflate(R.layout.fragment_interest, container, false);
+		 
+		 
+		
+	        return rootView;
+	}
+	
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		Intent i =new Intent (getActivity(),TravelActivity.class);
+		
+		i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		
+		startActivity(i);
+		
+	}
+	
+	public class InterestListArrayAdapter extends ArrayAdapter<String> {
+		  private final Context context;
+		  private final String[] values;
+
+		  public InterestListArrayAdapter(Context context, String[] values) {
+		    super(context, R.layout.interest_listview_item_row, values);
+		    this.context = context;
+		    this.values = values;
+		  }
+
+		  @Override
+		  public View getView(int position, View convertView, ViewGroup parent) {
+		    LayoutInflater inflater = (LayoutInflater) context
+		        .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		    View rowView = inflater.inflate(R.layout.interest_listview_item_row, parent, false);
+		    ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
+		    // change the icon for Windows and iPhone
+		    String s = values[position];
+		    
+		    if (s.startsWith("gro")) {
+		      imageView.setImageResource(R.drawable.int_travelbtn);
+		    } else if(s.startsWith("tra")) {
+		      imageView.setImageResource(R.drawable.int_shoppingbtn);
+		    }else if(s.startsWith("ent")){
+		     imageView.setImageResource(R.drawable.int_foodbtn);
+		    }else {
+		    	
+		    	 //imageView.setImageResource(R.drawable.suggestionchild);
+		    }
+
+		    return rowView;
+		  }
+		} 
+	
+	
+
+}

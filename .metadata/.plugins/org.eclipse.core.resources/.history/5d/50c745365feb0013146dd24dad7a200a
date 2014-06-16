@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RBCPrototype</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="app_id">487693571361090</string>
+    <string name="title_activity_menu">Pages</string>
+    
+
+    <string-array name="navigation_drawer_items_array">
+        <item>My Spending Habit</item>
+        <item>Cash Flow</item>
+        <item>Investment Oppoturnity</item>
+    </string-array>
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+
+</resources>

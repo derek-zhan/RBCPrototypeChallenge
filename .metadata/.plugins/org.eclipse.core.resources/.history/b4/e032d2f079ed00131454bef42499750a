@@ -1,0 +1,37 @@
+package com.byteme.rbcprototype;
+
+import android.app.Activity;
+import android.app.ListActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
+
+public class TransactionListActivity extends ListActivity {
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		
+		String[] values = new String[] { "Apple", "Milk", "Water",
+		        "Meat","Salt" };
+		
+		TransactionListArrayAdapter adapter = new TransactionListArrayAdapter(this, values);
+		  
+		setListAdapter(adapter);
+		
+	}
+
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		// TODO Auto-generated method stub
+		String item = (String) getListAdapter().getItem(position);
+	    Toast.makeText(this, item + " selected", Toast.LENGTH_SHORT).show();
+	}
+	
+	
+
+	
+}

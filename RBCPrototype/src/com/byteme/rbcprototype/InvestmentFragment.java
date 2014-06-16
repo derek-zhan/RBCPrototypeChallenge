@@ -1,0 +1,73 @@
+package com.byteme.rbcprototype;
+
+import android.app.Fragment;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.View.OnClickListener;
+import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
+
+public class InvestmentFragment extends Fragment implements OnClickListener {
+
+	
+	
+	
+	
+	
+	@Override
+	public void onActivityCreated(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onActivityCreated(savedInstanceState);
+		
+		 SeekBar sb = (SeekBar)getActivity().findViewById(R.id.select_risk);
+		
+		    sb.setMax(60);
+		    sb.setProgress(0); // Set it to zero so it will start at the left-most edge
+		    sb.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+
+		        @Override
+		        public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+		            if(seekBar.getProgress()<=20){
+		            	
+		            	
+		            }else if (seekBar.getProgress()>20 && seekBar.getProgress()<=40){
+		            	
+		            	
+		            	
+		            }else if (seekBar.getProgress()>40 && seekBar.getProgress()<=60){
+		            	
+		            	
+		            	
+		            }
+		        }
+
+		        @Override
+		        public void onStartTrackingTouch(SeekBar seekBar) {}
+
+		        @Override
+		        public void onStopTrackingTouch(SeekBar seekBar) {}
+
+		    });
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		
+		 
+		 View rootView = inflater.inflate(R.layout.fragment_investment, container, false);
+		
+	        return rootView;
+	}
+
+	
+	
+	
+}

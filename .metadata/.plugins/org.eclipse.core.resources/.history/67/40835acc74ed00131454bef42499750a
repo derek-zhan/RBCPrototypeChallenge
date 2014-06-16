@@ -1,0 +1,21 @@
+package com.byteme.rbcprototype;
+
+import android.content.Context;
+import android.widget.ArrayAdapter;
+
+public class TransactionListArrayAdapter extends ArrayAdapter<String> {
+
+	
+	private final Context context;
+	  private final String[] values;
+	
+	public TransactionListArrayAdapter(Context context,String[] values) {
+		super(context, R.layout.transaction_listview_item_row,values);
+		// TODO Auto-generated constructor stub
+		 this.context = context;
+		 this.values = values;
+	}
+	
+	
+
+}

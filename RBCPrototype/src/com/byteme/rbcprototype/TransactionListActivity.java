@@ -1,0 +1,25 @@
+package com.byteme.rbcprototype;
+
+import android.app.Activity;
+import android.app.ListActivity;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
+
+public class TransactionListActivity extends Activity {
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.transaction_detail);
+		
+		
+	}
+	
+
+	
+}
